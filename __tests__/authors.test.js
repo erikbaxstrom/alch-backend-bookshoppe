@@ -14,7 +14,7 @@ describe('Authors Routes', () => {
     expect(resp.status).toBe(200);
     expect(resp.body.length).toBe(5);
     expect(resp.body[0]).toEqual({
-      id: expect.any(Number),
+      id: expect.any(String),
       name: expect.any(String),
     });
   });
