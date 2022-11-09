@@ -17,6 +17,17 @@ describe('Books Routes', () => {
       released: expect.any(Number),
     });
   });
+  it('GET /books/1 should return the first book and associated info', async () => {
+    const resp = await request(app).get('/books/13');
+    const expectedResponseBody = {
+      title: 'Six of Crows',
+      released: 2015,
+      authors: [{ id: 1, name: 'Leigh Bardugo' }],
+    };
+    //expectations
+    expect(resp.status).toBe(200);
+    expect(resp.body).toEqual(expectedResponseBody);
+  });
   afterAll(() => {
     pool.end();
   });

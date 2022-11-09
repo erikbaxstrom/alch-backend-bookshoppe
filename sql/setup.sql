@@ -41,7 +41,35 @@ VALUES
 ('Seige and Storm', 2013),
 ('Ruin and Rising', 2014),
 ('Shadow of the Fox', 2018),
-('Sould of the Sword', 2019),
+('Soul of the Sword', 2019),
 ('Night of the Dragon', 2020),
 ('Six of Crows', 2015),
 ('Crooked Kingdom', 2016);
+
+
+DROP TABLE IF EXISTS authors_books;
+
+CREATE TABLE authors_books (
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    author_id BIGINT NOT NULL,
+    book_id BIGINT NOT NULL
+);
+
+INSERT INTO 
+    authors_books (author_id, book_id)
+VALUES 
+(1, 7),
+(1,8),
+(1,9),
+(1,13),
+(1,14),
+(2,10),
+(2,11),
+(2,12),
+(3,1),
+(3,2),
+(4,3),
+(5,4),
+(5,5),
+(5,6);
+
