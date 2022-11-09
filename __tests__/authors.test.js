@@ -17,6 +17,32 @@ describe('Authors Routes', () => {
       name: expect.any(String),
     });
   });
+  it('GET /authors/2 should return the second author and their books', async () => {
+    const resp = await request(app).get('/authors/2');
+    expect(resp.status).toBe(200);
+    expect(resp.body).toEqual({
+      name: 'Julie Kagawa',
+      dob: '1982-10-12',
+      pob: 'Sacramento, CA, United States',
+      books: [
+        {
+          id: '8',
+          title: 'Shadow of the Fox',
+          released: '2018',
+        },
+        {
+          id: '9',
+          title: 'Soul of the Sword',
+          released: '2019',
+        },
+        {
+          id: '10',
+          title: 'Night of the Dragon',
+          released: '2020',
+        },
+      ],
+    });
+  });
   afterAll(() => {
     pool.end();
   });
