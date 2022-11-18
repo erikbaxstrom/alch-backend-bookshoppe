@@ -26,19 +26,19 @@ describe('Authors Routes', () => {
       pob: 'Sacramento, CA, United States',
       books: [
         {
-          id: '8',
+          id: 10,
           title: 'Shadow of the Fox',
-          released: '2018',
+          released: 2018,
         },
         {
-          id: '9',
+          id: 11,
           title: 'Soul of the Sword',
-          released: '2019',
+          released: 2019,
         },
         {
-          id: '10',
+          id: 12,
           title: 'Night of the Dragon',
-          released: '2020',
+          released: 2020,
         },
       ],
     });
